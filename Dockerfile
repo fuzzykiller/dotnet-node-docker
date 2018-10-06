@@ -8,10 +8,10 @@ RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-lin
     && tar -xzf "nodejs.tar.gz" -C /usr/local --strip-components=1 \
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
-	&& apt-get update \
-	&& apt-get install --no-install-recommends -y apt-transport-https \
+    && apt-get update \
+    && apt-get install --no-install-recommends -y apt-transport-https \
     && apt-key add yarn-pubkey.gpg \
-	&& rm yarn-pubkey.gpg \
+    && rm yarn-pubkey.gpg \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
     && apt-get install --no-install-recommends -y rsync yarn
