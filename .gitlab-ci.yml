@@ -1,0 +1,13 @@
+image:
+  name: replicated/dockerfilelint:latest
+  entrypoint: [""]
+
+stages:
+  - lint
+
+lint_dockerfile:
+  stage: lint
+  tags:
+    - linux
+  script:
+    - /dockerfilelint/bin/dockerfilelint Dockerfile

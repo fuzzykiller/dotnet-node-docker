@@ -14,4 +14,5 @@ RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-lin
     && rm yarn-pubkey.gpg \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get install --no-install-recommends -y rsync yarn
+    && apt-get install --no-install-recommends -y rsync yarn \
+    && rm -rf /var/lib/apt/lists/*
