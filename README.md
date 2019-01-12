@@ -6,8 +6,8 @@ Available [on Docker Hub](https://hub.docker.com/r/fuzzyk/dotnet-node-docker/) â
 
 # Ingredients
 
-* Based on [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/):2.1-sdk
-* NodeJS LTS (8.12.0), updated only manually for now
+* Based on [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/):2.2-sdk
+* NodeJS LTS (10.15.0), updated only manually for now
 * [Yarn](https://yarnpkg.com)
 * rsync
 
