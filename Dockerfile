@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:2.2-sdk
 
-ENV NODE_VERSION 10.15.1
-ENV NODE_DOWNLOAD_SHA ca1dfa9790876409c8d9ecab7b4cdb93e3276cedfc64d56ef1a4ff1778a40214
+ENV NODE_VERSION 10.16.1
+ENV NODE_DOWNLOAD_SHA 32db9700d2ba926e774c17e7cd8952499e64e241b095d22e05d3d62ebe4cb6d4
 COPY yarn-pubkey.gpg .
 RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz" --output nodejs.tar.gz \
     && echo "$NODE_DOWNLOAD_SHA nodejs.tar.gz" | sha256sum -c - \
