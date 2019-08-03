@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.2-sdk
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 
 ENV NODE_VERSION 10.16.1
 ENV NODE_DOWNLOAD_SHA 32db9700d2ba926e774c17e7cd8952499e64e241b095d22e05d3d62ebe4cb6d4
