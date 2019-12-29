@@ -5,7 +5,7 @@ stages:
   - lint
   - build
 
-.lint_dockerfile:
+lint_dockerfiles:
   stage: lint
   image:
     name: replicated/dockerfilelint:latest
@@ -13,23 +13,10 @@ stages:
   tags:
     - linux
   script:
-    - /dockerfilelint/bin/dockerfilelint "$BUILD_DIR/Dockerfile"
+    - /dockerfilelint/bin/dockerfilelint 2.1/Dockerfile
+    - /dockerfilelint/bin/dockerfilelint 2.2/Dockerfile
+    - /dockerfilelint/bin/dockerfilelint 3.1/Dockerfile
 
-lint_2.1:
-  extends: .lint_dockerfile
-  variables:
-    BUILD_DIR: "$CI_PROJECT_DIR/2.1"
-  
-lint_2.2:
-  extends: .lint_dockerfile
-  variables:
-    BUILD_DIR: "$CI_PROJECT_DIR/2.2"
-
-lint_3.1:
-  extends: .lint_dockerfile
-  variables:
-    BUILD_DIR: "$CI_PROJECT_DIR/3.1"
-    
 .build_docker:
   stage: build
   image:
