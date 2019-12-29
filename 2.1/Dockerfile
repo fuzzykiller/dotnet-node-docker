@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.1
 
 ENV NODE_VERSION 12.14.0
 ENV NODE_DOWNLOAD_SHA 52207f643ab0fba66d5189a51aac280c4834c81f24a7297446896386ec93a5ed
-COPY ../yarn-pubkey.gpg .
+COPY yarn-pubkey.gpg .
 RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz" --output nodejs.tar.gz \
     && echo "$NODE_DOWNLOAD_SHA nodejs.tar.gz" | sha256sum -c - \
     && tar -xzf "nodejs.tar.gz" -C /usr/local --strip-components=1 \
